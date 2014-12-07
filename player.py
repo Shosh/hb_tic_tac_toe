@@ -11,12 +11,12 @@ class Player():
         try:
             human_input = int(human_input)
         except ValueError:
-            self.ask_for_move(board)
+            return self.ask_for_move(board)
         if self.is_input_valid(human_input, board):
             return self.move_to_index(human_input)
         else:
             return self.ask_for_move(board)
-    
+            
     def is_input_valid(self, inp, board):
         pm = board.possible_moves()
         if inp - 1 not in pm:

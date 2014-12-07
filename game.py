@@ -18,7 +18,7 @@ class Game():
                 try:
                     self.board.make_move(player_choice, self.player.symbol)
                 except ValueError:
-                    self.player.ask_for_move(self.board)
+                    return self.player.ask_for_move(self.board)
                 self.on_turn = self.ai
                 print(self.board.draw())
             else:
